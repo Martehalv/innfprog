@@ -14,14 +14,16 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 <body>
+    
+
     <header>
         <section id="player">
             <ul>
-                <li><img src="icons/shield.svg"> <span id="playerName">Marius</span></li>
-                <li><img src="icons/energydrink.svg" title="energy"> <span id="energy">3</span></li>
+                <li><img src="icons/shield.svg"> <span id="playerName">Marte</span></li>
+                <li><img src="icons/energydrink.svg" title="energy"> <span id="energy">5</span></li>
                 <li><img src="icons/notebook.svg"> <span id="notebookItems">0</span></li>
-                <li><img src="icons/solution.svg"> <span id="points">0</span> poeng</li>
-                <li><img src="icons/clock.svg"> <span id="duration">0</span></li>
+                <li><img src="icons/solution.svg"> <span id="points">10</span> poeng</li>
+                <li><img src="icons/clock.svg"> <span id="duration">138</span></li>
             </ul>
         </section>
         <img src="icons/c3_logo.svg" alt="Code Concept Collector" />
@@ -40,22 +42,22 @@
                     <tr>
                         <td><img src="icons/variable.svg" alt="" /></td>
                         <td>Variabler</td>
-                        <td>0</td>
+                        <td id="notebook-variables">5</td>
                     </tr>
                     <tr>
                         <td><img src="icons/array.svg" alt="" /></td>
                         <td>Arrayer</td>
-                        <td>1</span></td>
+                        <td id="notebook-array">2</span></td>
                     </tr>
                     <tr>
                         <td><img src="icons/loop.svg" alt="" /></td>
                         <td>Løkker</td>
-                        <td>2</td>
+                        <td id="notebook-loop">3</td>
                     </tr>
                     <tr>
                         <td><img src="icons/function.svg" alt="" /></td>
                         <td>Funksjoner</td>
-                        <td>1</td>
+                        <td id="notebook-function">4</td>
                     </tr>
                 </table>
             </div>
@@ -76,12 +78,44 @@
     <script>
         //PREPARE GAME CONFIG AND VARIABLES
         //TODO: config
+        
+
+        const gameConfig = {
+            player: "Marte",
+            energy: 0,
+            points: 0,
+            duration: 0
+        }
+
+        console.log(gameConfig)
+        document.getElementById("playerName").innerHTML = gameConfig.player
+        document.getElementById("energy").innerHTML = gameConfig.energy
+        document.getElementById("points").innerHTML = gameConfig.points
+        document.getElementById("duration").innerHTML = gameConfig.duration
+       
        
         //TODO: notebook
+        const notebook = {
+            variables: 3,
+            arrays: 2,
+            loops: 4,
+            functions: 7
+        }
+        
+        document.getElementById("notebook-variables").innerHTML = notebook.variables
+        document.getElementById("notebook-array").innerHTML = notebook.arrays
+        document.getElementById("notebook-loop").innerHTML = notebook.loops
+        document.getElementById("notebook-function").innerHTML = notebook.functions
         
 
         //TODO: print playerinfo to HTML
-        
+        if (player === true) {
+            document.getElementById("playerName").innerHTMl = "Hei " + gameConfig.player
+        } else {
+            document.getElementById("playerName").innerHTMl = "Waiting for players..."
+        }
+
+
         //TODO: print notebook info to HTML
 
         //(BONUS) TODO: function for all prints
